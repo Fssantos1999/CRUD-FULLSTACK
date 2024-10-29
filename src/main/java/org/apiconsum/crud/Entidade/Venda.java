@@ -9,23 +9,29 @@ public class Venda {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(nullable = false)
-    private Long idCliente;
+    @Column
+    private String nome;
+    @Column
+    private String sobrenome;
+    @Column(unique = true)
+    private String cpf;
     @Column(nullable = false)
     private LocalDate dataVenda;
     @Column(nullable = false)
-    private double valorTotal;
+    private Double valorTotal;
 
 
-    public Venda(Long id, Long idCliente, LocalDate dataVenda, double valorTotal) {
+    public Venda(Long id, String nome, String sobrenome, String cpf, LocalDate dataVenda, Double valorTotal) {
         this.id = id;
-        this.idCliente = idCliente;
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+        this.cpf = cpf;
         this.dataVenda = dataVenda;
         this.valorTotal = valorTotal;
     }
 
-    public Venda() {
 
+    public Venda() {
     }
 
 
@@ -37,12 +43,28 @@ public class Venda {
         this.id = id;
     }
 
-    public Long getIdCliente() {
-        return idCliente;
+    public String getNome() {
+        return nome;
     }
 
-    public void setIdCliente(Long idCliente) {
-        this.idCliente = idCliente;
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getSobrenome() {
+        return sobrenome;
+    }
+
+    public void setSobrenome(String sobrenome) {
+        this.sobrenome = sobrenome;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
     public LocalDate getDataVenda() {
@@ -53,11 +75,11 @@ public class Venda {
         this.dataVenda = dataVenda;
     }
 
-    public double getValorTotal() {
+    public Double getValorTotal() {
         return valorTotal;
     }
 
-    public void setValorTotal(double valorTotal) {
+    public void setValorTotal(Double valorTotal) {
         this.valorTotal = valorTotal;
     }
 }

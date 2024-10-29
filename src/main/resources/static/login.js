@@ -43,6 +43,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 .then(response => {
                     if (response.ok) {
                         alert("Login realizado com sucesso.");
+                        // Redireciona para a tela de boas-vindas
+                        window.location.href = "index.html";
                     } else {
                         alert("Credenciais inválidas.");
                     }
