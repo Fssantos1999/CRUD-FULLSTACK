@@ -1,115 +1,108 @@
-body {
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4; /* Cor de fundo leve */
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    height: 100vh;
+    color: #333; /* Cor padrão para o texto */
+    background-color: #e9f5e9; /* Cor de fundo suave */
+    overflow: hidden; /* Remove a barra de rolagem */
 }
 
 .sidebar {
     width: 250px;
-    height: 100vh;
-    background-color: #333; /* Cor de fundo da sidebar */
-    color: white;
-    padding: 15px;
-    position: fixed;
+    background-color: #4CAF50; /* Verde escuro */
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
 }
 
 .sidebar h2 {
-    text-align: center;
+    font-size: 24px;
+    color: #ffffff; /* Cor do título na sidebar */
+    margin-bottom: 20px;
 }
 
 .sidebar nav ul {
     list-style: none;
-    padding: 0;
+    width: 100%;
 }
 
 .sidebar nav ul li {
-    margin: 15px 0;
-}
-
-.sidebar nav ul li a {
-    color: white; /* Cor do texto dos links */
-    text-decoration: none;
-    padding: 10px;
-    display: block;
-}
-
-.sidebar nav ul li a:hover {
-    background-color: #575757; /* Cor de fundo ao passar o mouse */
-}
-
-.main-content {
-    margin-left: 270px; /* Espaço para a sidebar */
-    padding: 20px;
-}
-
-h1, h2 {
-    color: #333; /* Cor do texto dos títulos */
-}
-
-form {
-    background: white; /* Cor de fundo do formulário */
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
-
-form div {
     margin-bottom: 15px;
 }
 
-form label {
+.sidebar nav ul li a {
     display: block;
-    margin-bottom: 5px;
-}
-
-form input[type="text"],
-form input[type="date"],
-form input[type="number"] {
-    width: 100%; /* Largura total dos campos de entrada */
     padding: 10px;
-    border: 1px solid #ccc; /* Cor da borda */
-    border-radius: 4px;
-}
-
-button {
-    background-color: #28a745; /* Cor de fundo do botão (verde) */
-    color: white; /* Cor do texto do botão */
-    padding: 10px 15px;
-    border: none;
+    background-color: #45a049; /* Verde mais claro */
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
     border-radius: 5px;
-    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-button:hover {
-    background-color: #218838; /* Cor de fundo do botão ao passar o mouse */
+.sidebar nav ul li a:hover {
+    background-color: #3e8e41; /* Cor mais escura ao passar o mouse */
 }
 
-table {
-    width: 100%; /* Largura total da tabela */
-    border-collapse: collapse;
-    margin-top: 20px;
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo branco com leve transparência */
+    border-radius: 10px;
+    margin-left: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    position: relative; /* Para posicionar a animação */
+    overflow: hidden; /* Para esconder a animação fora do conteúdo */
 }
 
-table, th, td {
-    border: 1px solid #ccc; /* Cor da borda da tabela */
+.main-content h1 {
+    font-size: 36px;
+    color: #4CAF50; /* Cor verde para o título principal */
+    margin-bottom: 10px;
 }
 
-th, td {
-    padding: 10px; /* Preenchimento das células */
-    text-align: left;
+.main-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: center; /* Centraliza o texto */
 }
 
-th {
-    background-color: #e9ecef; /* Cor de fundo do cabeçalho da tabela */
-    color: #333; /* Cor do texto do cabeçalho */
+.animation-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0; /* Abaixo do conteúdo */
 }
 
-button {
-    margin-right: 5px; /* Margem entre os botões */
+/* Estilo da citação motivacional */
+.motivational-quote {
+    font-style: italic;
+    color: #777; /* Cor mais suave para a citação */
+    z-index: 1; /* Acima da animação */
 }
 
-button:hover {
-    background-color: #dc3545; /* Cor de fundo para o botão de exclusão */
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .main-content {
+        margin-left: 200px;
+        padding: 20px;
+    }
 }

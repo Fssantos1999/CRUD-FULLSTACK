@@ -19,21 +19,25 @@ public class Venda {
     private LocalDate dataVenda;
     @Column(nullable = false)
     private Double valorTotal;
+    @Column(nullable = false)
+    private String Telefone;
 
 
-    public Venda(Long id, String nome, String sobrenome, String cpf, LocalDate dataVenda, Double valorTotal) {
+    public Venda(Long id, String nome, String sobrenome,
+                 String cpf, LocalDate dataVenda,
+                 Double valorTotal, String telefone) {
         this.id = id;
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.cpf = cpf;
         this.dataVenda = dataVenda;
         this.valorTotal = valorTotal;
+        Telefone = telefone;
     }
-
 
     public Venda() {
-    }
 
+    }
 
     public Long getId() {
         return id;
@@ -81,5 +85,13 @@ public class Venda {
 
     public void setValorTotal(Double valorTotal) {
         this.valorTotal = valorTotal;
+    }
+
+    public String getTelefone() {
+        return Telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        Telefone = telefone;
     }
 }

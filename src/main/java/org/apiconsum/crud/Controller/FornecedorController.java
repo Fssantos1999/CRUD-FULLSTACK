@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 @CrossOrigin(origins = "http://localhost:63342")
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/fornecedor")
 public class FornecedorController {
 
     @Autowired
@@ -25,14 +25,14 @@ public class FornecedorController {
     }
 
     // Endpoint para obter um fornecedor por ID
-    @GetMapping("/{id}")
+    @GetMapping("/localizarFornecedor/{id}")
     public Fornecedor obterFornecedorPorId(@PathVariable Long id) {
         return fornecedorRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Fornecedor não encontrado"));
     }
 
     // Endpoint para atualizar um fornecedor existente
-    @PutMapping("/{id}")
+    @PutMapping("atualizarFornecedor/{id}")
     public Fornecedor atualizarFornecedor(@PathVariable Long id, @RequestBody Fornecedor fornecedor) {
         return fornecedorRepository.findById(id).map(fornecedorExistente -> {
             fornecedor.setId(id);

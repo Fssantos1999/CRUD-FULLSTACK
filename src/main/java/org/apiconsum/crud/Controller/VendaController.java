@@ -2,18 +2,27 @@ package org.apiconsum.crud.Controller;
 
 import org.apiconsum.crud.Entidade.Venda;
 import org.apiconsum.crud.Repository.VendaRepository; // Certifique-se de que você tenha um repositório criado
+import org.apiconsum.crud.Service.RelatorioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
+
 @CrossOrigin(origins = "http://localhost:63342")
 @RestController
 @RequestMapping("/api/vendas")
 public class VendaController {
     @Autowired
     private VendaRepository vendaRepository;
+
+
+
 
     @GetMapping
     public ResponseEntity<List<Venda>> getAllVendas() {
@@ -56,4 +65,16 @@ public class VendaController {
         vendaRepository.deleteById(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
+
+
+
+
+
+
+
+
+
+
+
+
 }

@@ -86,6 +86,7 @@ function editVenda(id) {
             document.getElementById('cpf').value = venda.cpf;
             document.getElementById('dataVenda').value = venda.dataVenda;
             document.getElementById('valorTotal').value = venda.valorTotal;
+           //NECESSARIO A IMPLANTACAO DO TELEFONE DO CLIENTE document.getElementById('telefone').value = venda.telefone;
         })
         .catch(error => {
             alert('Houve um erro ao carregar os dados da venda. Tente novamente.'); // Mensagem amigável

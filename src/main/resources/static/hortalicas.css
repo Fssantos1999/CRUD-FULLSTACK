@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte mais moderna */
+    display: flex; /* Usar flexbox para layout */
+    height: 100vh; /* Altura total da tela */
+    color: #495057; /* Cor padrão para o texto */
+    background-color: #f8f9fa; /* Cor de fundo suave */
+}
+
+.sidebar {
+    width: 250px; /* Largura da sidebar */
+    background-color: #ffffff; /* Fundo branco */
+    padding: 20px; /* Espaçamento interno */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    display: flex; /* Exibe a sidebar como flex container */
+    flex-direction: column; /* Organiza os itens em coluna */
+}
+
+.sidebar h2 {
+    font-size: 24px; /* Tamanho do título */
+    color: #343a40; /* Cor do título */
+    margin-bottom: 20px; /* Espaço abaixo do título */
+}
+
+.sidebar nav ul {
+    list-style: none; /* Remove as bolinhas da lista */
+    padding: 0; /* Remove o padding padrão */
+}
+
+.sidebar nav ul li {
+    margin-bottom: 15px; /* Espaço entre os itens da lista */
+}
+
+.sidebar nav ul li a {
+    display: block; /* Exibe como bloco */
+    padding: 12px; /* Espaçamento interno dos links */
+    background-color: #28a745; /* Cor de fundo verde */
+    color: #ffffff; /* Texto branco */
+    text-align: center; /* Centraliza o texto */
+    text-decoration: none; /* Remove o sublinhado */
+    border-radius: 5px; /* Bordas arredondadas */
+    transition: background-color 0.3s, transform 0.2s; /* Transição suave para hover */
+}
+
+.sidebar nav ul li a:hover {
+    background-color: #218838; /* Cor mais escura ao passar o mouse */
+    transform: translateY(-2px); /* Levanta ligeiramente ao passar o mouse */
+}
+
+.main-content {
+    flex: 1; /* Preenche o espaço restante */
+    display: flex; /* Exibe o conteúdo como flex container */
+    flex-direction: column; /* Organiza os itens em coluna */
+    padding: 20px; /* Espaçamento interno */
+    background-color: #ffffff; /* Fundo branco */
+    border-radius: 5px; /* Bordas arredondadas */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    margin-left: 20px; /* Espaço à esquerda da sidebar */
+}
+
+.main-content h1 {
+    font-size: 32px; /* Tamanho do título */
+    color: #343a40; /* Cor do título */
+    margin-bottom: 20px; /* Espaço abaixo do título */
+}
+
+form {
+    margin-bottom: 20px; /* Espaço abaixo do formulário */
+}
+
+/* Estilo dos campos do formulário */
+label {
+    display: block; /* Exibe como bloco */
+    margin: 10px 0 5px; /* Margem ao redor do rótulo */
+    font-weight: bold; /* Negrito */
+    color: #495057; /* Cor dos rótulos */
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"] {
+    width: 100%; /* Largura total */
+    padding: 12px; /* Espaçamento interno */
+    margin-bottom: 15px; /* Espaço abaixo do campo */
+    border: 1px solid #ced4da; /* Borda leve */
+    border-radius: 5px; /* Bordas arredondadas */
+    transition: border-color 0.3s; /* Transição suave na borda */
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus {
+    border-color: #28a745; /* Cor da borda ao focar */
+    outline: none; /* Remove o contorno padrão */
+}
+
+.button-group {
+    display: flex; /* Botões lado a lado */
+    justify-content: flex-start; /* Alinha os botões à esquerda */
+}
+
+button {
+    background-color: #28a745; /* Verde */
+    color: #ffffff; /* Texto branco */
+    border: none; /* Sem borda */
+    padding: 12px 20px; /* Espaçamento interno */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Mão ao passar o mouse */
+    margin-right: 10px; /* Espaço entre botões */
+    transition: background-color 0.3s, transform 0.2s; /* Transição suave para hover */
+}
+
+button:hover {
+    background-color: #218838; /* Cor de destaque ao passar o mouse */
+    transform: translateY(-2px); /* Levanta ligeiramente ao passar o mouse */
+}
+
+/* Estilo da tabela */
+table {
+    width: 100%; /* Largura total da tabela */
+    border-collapse: collapse; /* Sem espaços entre as células */
+    margin-top: 20px; /* Espaço acima da tabela */
+}
+
+th, td {
+    border: 1px solid #ddd; /* Borda leve */
+    padding: 12px; /* Espaçamento interno */
+    text-align: left; /* Alinhamento à esquerda */
+}
+
+th {
+    background-color: #28a745; /* Cor de fundo do cabeçalho */
+    color: white; /* Texto branco */
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9; /* Cor alternada para linhas */
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px; /* Largura menor para telas menores */
+    }
+
+    .main-content {
+        margin-left: 200px; /* Ajuste no espaço da sidebar */
+    }
+}

@@ -1,10 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Hortaliças</title>
+    <link rel="stylesheet" href="hortalicas.css"> <!-- Link para o seu CSS -->
 </head>
 <body>
-$END$
+<div class="sidebar">
+    <h2>Menu</h2>
+    <nav>
+        <ul>
+            <li><a href="vendas.html">Vendas</a></li>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="registro.html">Registro</a></li>
+        </ul>
+    </nav>
+</div>
+
+<div class="main-content">
+    <h1>Gerenciamento de Hortaliças</h1>
+
+    <form id="formHortalica">
+        <label for="nome">Nome da Hortaliça:</label>
+        <input type="text" id="nome" required>
+
+        <label for="medidasProtetivas">Medidas Protetivas:</label>
+        <input type="text" id="medidasProtetivas" required>
+
+        <label for="tipoSoloPH">Tipo de Solo/PH:</label>
+        <input type="text" id="tipoSoloPH" required>
+
+        <label for="melhorEpoca">Melhor Época de Plantio:</label>
+        <input type="text" id="melhorEpoca" required>
+
+        <label for="preco">Preço R$:</label>
+        <input type="number" id="preco" required step="0.01">
+
+        <div class="button-group">
+            <button type="submit">Salvar Hortaliça</button>
+            <button type="button" onclick="adicionarHortalica()">Adicionar Hortaliça</button>
+        </div>
+    </form>
+
+    <h2>Lista de Hortaliças</h2>
+    <table id="tabelaHortalicas">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Medidas Protetivas</th>
+            <th>Tipo de Solo/PH</th>
+            <th>Melhor Época</th>
+            <th>Preço</th>
+            <th>Ações</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- As hortaliças serão inseridas aqui pelo JavaScript -->
+        </tbody>
+    </table>
+</div>
+
+<script src="hortalicas.js"></script> <!-- Link para o seu JavaScript -->
 </body>
 </html>
